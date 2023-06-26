@@ -5,3 +5,8 @@ Lua code to calculate stats and other data for Fire Emblem. Made for other proje
 Currently not in development, same code as in the one in OifeyBot currently.
 
 Will work on it again someday, who knows
+
+## Basic Usage
+```lua
+local almanac = require("almanac")
+almanac:load_game()```
