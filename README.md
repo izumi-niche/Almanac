@@ -9,4 +9,4 @@ Will work on it again someday, who knows
 ## Basic Usage
 ```lua
 local almanac = require("almanac")
-almanac:load_game()```
+almanac:load_game()
