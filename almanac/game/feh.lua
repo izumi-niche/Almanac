@@ -269,7 +269,7 @@ function Character:get_info()
     
     -- Check for resplendent
     if self:has_resplendent() then
-        text = text .. string.format("%sResplendent Outfit\n", heroes_pack:get("resplendent"))
+        text = text .. string.format("%sResplendent Outfit\n", heroes_pack:get("resplendent", "💠"))
     end
     
     -- Check for rearmed
@@ -279,7 +279,8 @@ function Character:get_info()
     
     -- Check for Legendary/Mythic and show the bonuses
     if self:is_legendary() then
-        text = text .. string.format("%s%s\n", self:blessing_icon(), util.table_stats(self.data.boost, {value_start = "+"}))
+        text = text .. string.format("%s**%s:** %s\n", self:blessing_icon(), self.data.blessing, 
+        util.table_stats(self.data.boost, {value_start = "+"}))
     end
     
      -- Check for Duo Hero
@@ -339,7 +340,7 @@ function Character:get_mod()
     local add = ""
     
     if self.resplendent then
-        add = add .. string.format("%s+2 ", heroes_pack:get("resplendent"))
+        add = add .. string.format("%s+2 ", heroes_pack:get("resplendent", "💠"))
     end
     
     if self.bonus then
@@ -347,7 +348,7 @@ function Character:get_mod()
     end
     
     if self.support then
-        add = add .. string.format("%sSup. ", heroes_pack:get("feh_" .. util.title(self.support)))
+        add = add .. string.format("%sSup. ", heroes_pack:get("feh_" .. util.title(self.support), util.title(self.support) .. " "))
     end
     
     -- add them here
@@ -904,6 +905,7 @@ function Skill:organize_learn(data)
         end
         
         emoji = emoji .. tostring(rarity)
+        emoji = heroes_pack:get(emoji, string.format("**%s:** ", tostring(rarity)))
         
         -- table stuff
         if result[rarity] == nil then result[rarity] = {} end
@@ -913,7 +915,7 @@ function Skill:organize_learn(data)
         if stuff[pool] == nil then stuff[pool] = {} end
         
         table.insert(stuff[pool], string.format("%s%s\n", 
-        heroes_pack:get(emoji), name))
+        emoji, name))
     end
     
     local fields = {}
