@@ -4,7 +4,7 @@ local util = almanac.util
 
 local fe12 = require("almanac.game.fe12")
 
-local pack = util.emoji.get("database/fe11/emoji.json")
+local pack = util.emoji.get("almanac/database/fe11/emoji.json")
 
 local Character = {}
 local Job = {}
@@ -33,8 +33,8 @@ Character.Job = Job
 Character.Item = Item
 Character.pack = pack
 
-Character.section = almanac.get("database/fe11/char.json")
-Character.helper_portrait = "database/fe11/images"
+Character.section = almanac.get("almanac/database/fe11/char.json")
+Character.helper_portrait = "almanac/database/fe11/images"
 
 Character.inventory = inventory
 
@@ -44,9 +44,9 @@ Character.inventory = inventory
 Job.__index = Job
 setmetatable(Job, fe12.Job)
 
-Job.icon = "database/fe11/images/icon/%s"
+Job.icon = "almanac/database/fe11/images/icon/%s"
 
-Job.section = almanac.get("database/fe11/job.json")
+Job.section = almanac.get("almanac/database/fe11/job.json")
 
 Job.pack = pack
 
@@ -68,7 +68,7 @@ end
 Item.__index = Item
 setmetatable(Item, fe12.Item)
 
-Item.section = almanac.get("database/fe11/item.json")
+Item.section = almanac.get("almanac/database/fe11/item.json")
 
 return {
     Character = Character,

@@ -15,7 +15,7 @@ local rank_exp = {
     A = 91
 }
 
-local pack = util.emoji.get("database/fe13/emoji.json")
+local pack = util.emoji.get("almanac/database/fe13/emoji.json")
 
 local Character = {}
 local Job = {}
@@ -43,9 +43,9 @@ table.remove(inventory.item_func, 5)
 Character.__index = Character
 setmetatable(Character, fe14.Character)
 
-Character.section = almanac.get("database/fe13/char.json")
+Character.section = almanac.get("almanac/database/fe13/char.json")
 
-Character.helper_portrait = "database/fe13/images"
+Character.helper_portrait = "almanac/database/fe13/images"
 
 Character.avatar_id = "robin"
 Character.avatar_child = "morgan"
@@ -340,7 +340,7 @@ end
 Job.__index = Job
 setmetatable(Job, fe14.Job)
 
-Job.section = almanac.get("database/fe13/job.json")
+Job.section = almanac.get("almanac/database/fe13/job.json")
 
 Job.pack = pack
 Job.rank_exp = rank_exp
@@ -352,7 +352,7 @@ Job.Skill = Skill
 Skill.__index = Skill
 setmetatable(Skill, fe14.Skill)
 
-Skill.section = almanac.get("database/fe13/skill.json")
+Skill.section = almanac.get("almanac/database/fe13/skill.json")
 
 ---------------------------------------------------
 -- Item --
@@ -360,7 +360,7 @@ Skill.section = almanac.get("database/fe13/skill.json")
 Item.__index = Item
 setmetatable(Item, fe14.Item)
 
-Item.section = almanac.get("database/fe13/item.json")
+Item.section = almanac.get("almanac/database/fe13/item.json")
 
 Item.forge_worth = {0.5, 1.5, 3.0, 5.0, 7.5}
 Item.forge_increase = {mt = 1, hit = 5, crit = 3}
@@ -493,7 +493,7 @@ end
 Shop.__index = Shop
 setmetatable(Shop, almanac.Workspace)
 
-Shop.section = almanac.get("database/fe13/shop.json")
+Shop.section = almanac.get("almanac/database/fe13/shop.json")
 
 return {
     Character = Character,

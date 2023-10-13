@@ -106,7 +106,7 @@ function get(file_path)
     
 end
 
-loaded_packs["global"] = Pack:new("database/emoji_global.json")
+loaded_packs["global"] = Pack:new("almanac/database/emoji_global.json")
 
 r =  {
     Emoji = Emoji,

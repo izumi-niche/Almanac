@@ -25,7 +25,7 @@ local Card = {}
 Card.__index = Card
 setmetatable(Card, Workspace)
 
-Card.section = almanac.get("database/cipher/card.json")
+Card.section = almanac.get("almanac/database/cipher/card.json")
 
 function Card:show()
     local pagebox = Pagebox:new()
@@ -73,7 +73,7 @@ function Card:show()
     end
     
     -- setting the thumbnail on the first page applies to all of them
-    pagebox.pages[1]:image("icon", string.format("database/cipher/%s.png", self.data.symbol))
+    pagebox.pages[1]:image("icon", string.format("almanac/database/cipher/%s.png", self.data.symbol))
     
     pagebox:set("color", embed_color[self.data.symbol])
     return pagebox

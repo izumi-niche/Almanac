@@ -19,8 +19,8 @@ inventory.eff_multiplier = 2
 Character.__index = Character
 setmetatable(Character, fe8.Character)
 
-Character.section = almanac.get("database/fe7/char.json")
-Character.helper_portrait = "database/fe7/images"
+Character.section = almanac.get("almanac/database/fe7/char.json")
+Character.helper_portrait = "almanac/database/fe7/images"
 
 Character.inventory = inventory
 
@@ -38,7 +38,7 @@ Character.Item = Item
 Job.__index = Job
 setmetatable(Job, fe8.Job)
 
-Job.section = almanac.get("database/fe7/job.json")
+Job.section = almanac.get("almanac/database/fe7/job.json")
 
 ---------------------------------------------------
 -- Item --
@@ -46,7 +46,7 @@ Job.section = almanac.get("database/fe7/job.json")
 Item.__index = Item
 setmetatable(Item, fe8.Item)
 
-Item.section = almanac.get("database/fe7/item.json")
+Item.section = almanac.get("almanac/database/fe7/item.json")
 
 return {
     Character = Character,

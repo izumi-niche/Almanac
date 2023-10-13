@@ -26,9 +26,9 @@ end end
 Character.__index = Character
 setmetatable(Character, fe15.Character)
 
-Character.section = almanac.get("database/fe2/char.json")
+Character.section = almanac.get("almanac/database/fe2/char.json")
 Character.helper_job_growth = false
-Character.helper_portrait = "database/fe2/images"
+Character.helper_portrait = "almanac/database/fe2/images"
 
 Character.compare_cap = false
 
@@ -53,7 +53,7 @@ end
 Job.__index = Job
 setmetatable(Job, fe15.Job)
 
-Job.section = almanac.get("database/fe2/job.json")
+Job.section = almanac.get("almanac/database/fe2/job.json")
 
 -- Only return the res for display stuff and dread fither
 function Job:get_base(display)
@@ -72,7 +72,7 @@ end
 Item.__index = Item
 setmetatable(Item, fe15.Item)
 
-Item.section = almanac.get("database/fe2/item.json")
+Item.section = almanac.get("almanac/database/fe2/item.json")
 
 return {
     Character = Character,

@@ -26,8 +26,8 @@ end end
 Character.__index = Character
 setmetatable(Character, fe2.Character)
 
-Character.section = almanac.get("database/fe1/char.json")
-Character.helper_portrait = "database/fe1/images"
+Character.section = almanac.get("almanac/database/fe1/char.json")
+Character.helper_portrait = "almanac/database/fe1/images"
 
 Character.inventory = inventory
 
@@ -90,7 +90,7 @@ end
 Job.__index = Job
 setmetatable(Job, fe2.Job)
 
-Job.section = almanac.get("database/fe1/job.json")
+Job.section = almanac.get("almanac/database/fe1/job.json")
 
 Job.hp_bonus = false
 
@@ -100,7 +100,7 @@ Job.hp_bonus = false
 Item.__index = Item
 setmetatable(Item, fe2.Item)
 
-Item.section = almanac.get("database/fe1/item.json")
+Item.section = almanac.get("almanac/database/fe1/item.json")
 
 return {
     Character = Character,

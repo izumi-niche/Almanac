@@ -28,8 +28,8 @@ inventory.eff_multiplier = 3
 Character.__index = Character
 setmetatable(Character, fe7.Character)
 
-Character.section = almanac.get("database/fe6/char.json")
-Character.helper_portrait = "database/fe6/images"
+Character.section = almanac.get("almanac/database/fe6/char.json")
+Character.helper_portrait = "almanac/database/fe6/images"
 
 Character.promo_use_fixed = false
 Character.rank_exp = rank_exp
@@ -52,7 +52,7 @@ setmetatable(Job, fe7.Job)
 
 Job.crit_value = 30
 
-Job.section = almanac.get("database/fe6/job.json")
+Job.section = almanac.get("almanac/database/fe6/job.json")
 
 Job.rank_exp = rank_exp
 
@@ -62,7 +62,7 @@ Job.rank_exp = rank_exp
 Item.__index = Item
 setmetatable(Item, fe7.Item)
 
-Item.section = almanac.get("database/fe6/item.json")
+Item.section = almanac.get("almanac/database/fe6/item.json")
 
 return {
     Character = Character,

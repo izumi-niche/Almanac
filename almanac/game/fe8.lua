@@ -19,7 +19,7 @@ local rank_exp = {
     S = 251
 }
 
-local gba_pack = util.emoji.get("database/emoji_gba.json")
+local gba_pack = util.emoji.get("almanac/database/emoji_gba.json")
 
 ---------------------------------------------------
 -- Inventory --
@@ -53,8 +53,8 @@ inventory:item_calc("crit", inventory_crit)
 Character.__index = Character
 setmetatable(Character, workspaces.Character)
 
-Character.section = almanac.get("database/fe8/char.json")
-Character.helper_portrait = "database/fe8/images"
+Character.section = almanac.get("almanac/database/fe8/char.json")
+Character.helper_portrait = "almanac/database/fe8/images"
 
 Character.helper_job_base = true
 
@@ -110,7 +110,7 @@ function Character:setup()
     end
 end
 
-local trainee_promo = util.file.json_read("database/fe8/trainee.json")
+local trainee_promo = util.file.json_read("almanac/database/fe8/trainee.json")
 
 -- Show
 function Character:show()
@@ -329,7 +329,7 @@ function Character:get_cap()
 end
 
 -- Only get first class when getting promotions for averages
-Character.path_section = almanac.get("database/fe8/path.json")
+Character.path_section = almanac.get("almanac/database/fe8/path.json")
 Character.trainee_option = {
     ross = {
         {"herom", "warrior"},
@@ -426,7 +426,7 @@ end
 Job.__index = Job
 setmetatable(Job, workspaces.Job)
 
-Job.section = almanac.get("database/fe8/job.json")
+Job.section = almanac.get("almanac/database/fe8/job.json")
 
 Job.crit_table = {"swordmasterf", "swordmasterm", "swordmaster", "berserker", "journeyman3", "recruit3"}
 Job.crit_value = 15
@@ -449,7 +449,7 @@ end
 Item.__index = Item
 setmetatable(Item, workspaces.Item)
 
-Item.section = almanac.get("database/fe8/item.json")
+Item.section = almanac.get("almanac/database/fe8/item.json")
 
 return {
     Character = Character,

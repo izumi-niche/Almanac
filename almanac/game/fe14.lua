@@ -6,7 +6,7 @@ local util = almanac.util
 local Infobox = almanac.Infobox
 local Pagebox = almanac.Pagebox
 
-local pack = util.emoji.get("database/fe14/emoji.json")
+local pack = util.emoji.get("almanac/database/fe14/emoji.json")
 
 local rank_exp = {
     E = 1,
@@ -123,13 +123,13 @@ inventory:item_calc("\nfollow-up", inventory_followup)
 Character.__index = Character
 setmetatable(Character, workspaces.Character)
 
-Character.section = almanac.get("database/fe14/cq.json")
+Character.section = almanac.get("almanac/database/fe14/cq.json")
 
 Character.helper_job_base = true
 Character.helper_job_growth = true
 Character.helper_job_cap = true
 
-Character.helper_portrait = "database/fe14/images"
+Character.helper_portrait = "almanac/database/fe14/images"
 
 Character.avatar_id = "corrin"
 Character.avatar_child = "kana"
@@ -1185,7 +1185,7 @@ local box_color = {
 function Character:apply_color(infobox)
     if self.route ~= nil and box_color[self.route] ~= nil then
         infobox:set("color", box_color[self.route])
-        infobox:image("icon", string.format("database/fe14/icon_%s.png", self.route) )
+        infobox:image("icon", string.format("almanac/database/fe14/icon_%s.png", self.route) )
     end
 end
 ---------------------------------------------------
@@ -1194,7 +1194,7 @@ end
 Job.__index = Job
 setmetatable(Job, workspaces.Job)
 
-Job.section = almanac.get("database/fe14/job.json")
+Job.section = almanac.get("almanac/database/fe14/job.json")
 
 Job.pack = pack
 Job.rank_exp = rank_exp
@@ -1265,7 +1265,7 @@ end
 Skill.__index = Skill
 setmetatable(Skill, workspaces.Skill)
 
-Skill.section = almanac.get("database/fe14/skill.json")
+Skill.section = almanac.get("almanac/database/fe14/skill.json")
 
 function Skill:get_emoji()
     if util.emoji.config.enabled then
@@ -1282,7 +1282,7 @@ end
 Item.__index = Item
 setmetatable(Item, workspaces.Item)
 
-Item.section = almanac.get("database/fe14/item.json")
+Item.section = almanac.get("almanac/database/fe14/item.json")
 
 Item.forge_pattern = {
     -- Pattern 1
@@ -1336,7 +1336,7 @@ end
 Redirect.__index = Redirect
 setmetatable(Redirect, almanac.Workspace)
 
-Redirect.section = almanac.get("database/fe14/redirect.json")
+Redirect.section = almanac.get("almanac/database/fe14/redirect.json")
 
 Redirect.redirect = true
 
@@ -1395,7 +1395,7 @@ end
 Conquest.__index = Conquest
 setmetatable(Conquest, Character)
 
-Conquest.section = almanac.get("database/fe14/cq.json")
+Conquest.section = almanac.get("almanac/database/fe14/cq.json")
 
 Conquest.route = "cq"
 
@@ -1403,7 +1403,7 @@ Conquest.route = "cq"
 Birthright.__index = Birthright
 setmetatable(Birthright, Character)
 
-Birthright.section = almanac.get("database/fe14/br.json")
+Birthright.section = almanac.get("almanac/database/fe14/br.json")
 
 Birthright.route = "br"
 
@@ -1411,7 +1411,7 @@ Birthright.route = "br"
 Revelation.__index = Revelation
 setmetatable(Revelation, Character)
 
-Revelation.section = almanac.get("database/fe14/rev.json")
+Revelation.section = almanac.get("almanac/database/fe14/rev.json")
 
 Revelation.route = "rev"
 

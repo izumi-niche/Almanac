@@ -25,8 +25,8 @@ end
 Character.__index = Character
 setmetatable(Character, fe10.Character)
 
-Character.section = almanac.get("database/fe9/char.json")
-Character.helper_portrait = "database/fe9/images"
+Character.section = almanac.get("almanac/database/fe9/char.json")
+Character.helper_portrait = "almanac/database/fe9/images"
 
 Character.Job = Job
 Character.Item = Item
@@ -69,7 +69,7 @@ end
 Job.__index = Job
 setmetatable(Job, fe10.Job)
 
-Job.section = almanac.get("database/fe9/job.json")
+Job.section = almanac.get("almanac/database/fe9/job.json")
 
 function Job:get_name()
     if self:is_laguz() then
@@ -86,7 +86,7 @@ end
 Item.__index = Item
 setmetatable(Item, fe10.Item)
 
-Item.section = almanac.get("database/fe9/item.json")
+Item.section = almanac.get("almanac/database/fe9/item.json")
 
 
 ---------------------------------------------------
@@ -95,7 +95,7 @@ Item.section = almanac.get("database/fe9/item.json")
 Skill.__index = Skill
 setmetatable(Skill, fe10.Skill)
 
-Skill.section = almanac.get("database/fe9/skill.json")
+Skill.section = almanac.get("almanac/database/fe9/skill.json")
 
 return {
     Character = Character,
