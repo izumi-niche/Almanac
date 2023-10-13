@@ -6,7 +6,7 @@ local util = almanac.util
 local Infobox = almanac.Infobox
 local Pagebox = almanac.Pagebox
 
-local pack = util.emoji.get("database/fe17/emoji.json")
+local pack = util.emoji.get("almanac/database/fe17/emoji.json")
 local global_pack = util.emoji.global
 
 local Character = {}
@@ -85,13 +85,13 @@ inventory:item_calc("ddg", inventory_ddg)
 Character.__index = Character
 setmetatable(Character, workspaces.Character)
 
-Character.section = almanac.get("database/fe17/char.json")
+Character.section = almanac.get("almanac/database/fe17/char.json")
 
 Character.helper_job_base = true
 Character.helper_job_growth = true
 Character.helper_job_cap = true
 
-Character.helper_portrait = "database/fe17/images"
+Character.helper_portrait = "almanac/database/fe17/images"
 
 Character.inventory = inventory
 
@@ -111,7 +111,7 @@ function Character:default_options()
 end
 
 -- Equip ring
-local ring_section = almanac.get("database/fe17/equip_ring.json")
+local ring_section = almanac.get("almanac/database/fe17/equip_ring.json")
 
 function Character:setup()
     self.job = Job:new(self.options.class)
@@ -468,7 +468,7 @@ end
 Job.__index = Job
 setmetatable(Job, workspaces.Job)
 
-Job.section = almanac.get("database/fe17/job.json")
+Job.section = almanac.get("almanac/database/fe17/job.json")
 
 function Job:show()
     local infobox = workspaces.Job.show(self)
@@ -581,7 +581,7 @@ end
 Ring.__index = Ring
 setmetatable(Ring, almanac.Workspace)
 
-Ring.section = almanac.get("database/fe17/ring.json")
+Ring.section = almanac.get("almanac/database/fe17/ring.json")
 
 function Ring:show()
     if self:is_emblem() then
@@ -857,7 +857,7 @@ function Ring:get_equip(target, style)
 end
 
 function Ring:get_portrait()
-    return string.format("database/fe17/images/%s", self.data.portrait)
+    return string.format("almanac/database/fe17/images/%s", self.data.portrait)
 end
 
 function Ring:is_emblem()
@@ -872,7 +872,7 @@ setmetatable(Item, workspaces.Item)
 
 Item.pack = pack
 
-Item.section = almanac.get("database/fe17/item.json")
+Item.section = almanac.get("almanac/database/fe17/item.json")
 
 function Item:default_options()
     return {
@@ -1044,7 +1044,7 @@ end
 Engrave.__index = Engrave
 setmetatable(Engrave, almanac.Workspace)
 
-Engrave.section = almanac.get("database/fe17/engrave.json")
+Engrave.section = almanac.get("almanac/database/fe17/engrave.json")
 
 function Engrave:show_bonus()
     return util.table_stats(self.data.stats, {value_start = "+", order = "item"})
@@ -1060,7 +1060,7 @@ end
 Skill.__index = Skill
 setmetatable(Skill, workspaces.Skill)
 
-Skill.section = almanac.get("database/fe17/skill.json")
+Skill.section = almanac.get("almanac/database/fe17/skill.json")
 
 function Skill:show()
     local infobox = workspaces.Skill.show(self)
@@ -1074,7 +1074,7 @@ end
 
 function Skill:get_icon()
     if self.data.icon ~= nil then
-        return string.format("database/fe17/images/skill/%s.png", self.data.icon)
+        return string.format("almanac/database/fe17/images/skill/%s.png", self.data.icon)
     end
 end
 

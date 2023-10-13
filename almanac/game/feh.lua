@@ -5,7 +5,7 @@ local util = almanac.util
 local Infobox = almanac.Infobox
 local Pagebox = almanac.Pagebox
 
-local heroes_pack = util.emoji.get("database/feh/emoji.json")
+local heroes_pack = util.emoji.get("almanac/database/feh/emoji.json")
 local pack = util.emoji.global
 
 local embed_color = {
@@ -30,7 +30,7 @@ local Equip = {}
 Character.__index = Character
 setmetatable(Character, workspaces.Character)
 
-Character.section = almanac.get("database/feh/char.json")
+Character.section = almanac.get("almanac/database/feh/char.json")
 
 Character.allow_show_growth = false
 Character.allow_show_cap = false
@@ -222,7 +222,7 @@ function Character:show_info()
 end
 
 function Character:get_chibi()
-    return string.format("database/feh/images/chibi/%s.png", self.data.chibi)
+    return string.format("almanac/database/feh/images/chibi/%s.png", self.data.chibi)
 end
 
 function Character:get_base_kit()
@@ -707,15 +707,15 @@ function Character:weapon_icon()
 end
 
 function Character:weapon_path()
-    return string.format("database/feh/icon/%s_%s.png", self.data.color, self.data.weapon)
+    return string.format("almanac/database/feh/icon/%s_%s.png", self.data.color, self.data.weapon)
 end
 
 function Character:get_portrait()
     if self.resplendent and self:has_resplendent() then
-        return string.format("database/feh/images/heroes/%sr.webp", self.data.id)
+        return string.format("almanac/database/feh/images/heroes/%sr.webp", self.data.id)
     
     else
-        return string.format("database/feh/images/heroes/%s.webp", self.data.id)
+        return string.format("almanac/database/feh/images/heroes/%s.webp", self.data.id)
     end
 end
 
@@ -725,7 +725,7 @@ end
 Skill.__index = Skill
 setmetatable(Skill, almanac.Workspace)
 
-Skill.section = almanac.get("database/feh/skill.json")
+Skill.section = almanac.get("almanac/database/feh/skill.json")
 
 local skill_display = {
     Weapon = {
@@ -770,7 +770,7 @@ function Skill:show()
     -- weapon refine icon
     if self.data.slot == "Weapon" and self.data.icon then
         infobox:image("icon", string.format(
-        "database/feh/images/passive/%s.png", self.data.icon))
+        "almanac/database/feh/images/passive/%s.png", self.data.icon))
     end
     
     pagebox:page(infobox)
@@ -1021,10 +1021,10 @@ end
 
 function Skill:get_portrait()
     if self.data.slot == "Weapon" and self.data.wpn then
-        return string.format("database/feh/images/wpn/%s.png", self.data.wpn)
+        return string.format("almanac/database/feh/images/wpn/%s.png", self.data.wpn)
         
     elseif self.data.slot ~= "Weapon" and self.data.icon then
-        return string.format("database/feh/images/passive/%s.png", self.data.icon)
+        return string.format("almanac/database/feh/images/passive/%s.png", self.data.icon)
     end
 end
 
@@ -1177,7 +1177,7 @@ end
 Artist.__index = Artist
 setmetatable(Artist, almanac.Workspace)
 
-Artist.section = almanac.get("database/feh/artist.json")
+Artist.section = almanac.get("almanac/database/feh/artist.json")
 
 function Artist:show()
     local text = ""
@@ -1211,7 +1211,7 @@ end
 Voice.__index = Voice
 setmetatable(Voice, Artist)
 
-Voice.section = almanac.get("database/feh/va.json")
+Voice.section = almanac.get("almanac/database/feh/va.json")
 
 ---------------------------------------------------
 -- Equip--
@@ -1219,7 +1219,7 @@ Voice.section = almanac.get("database/feh/va.json")
 Equip.__index = Equip
 setmetatable(Equip, almanac.Workspace)
 
-Equip.section = almanac.get("database/feh/equip.json")
+Equip.section = almanac.get("almanac/database/feh/equip.json")
 
 ---------------------------------------------------
 -- Init --

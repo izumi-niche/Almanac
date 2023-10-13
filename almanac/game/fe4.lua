@@ -14,7 +14,7 @@ local rank_exp = {
     ["☆"] = 5
 }
 
-local pack = util.emoji.get("database/emoji_jugdral.json")
+local pack = util.emoji.get("almanac/database/emoji_jugdral.json")
 
 local Character = {}
 local Job = {}
@@ -64,8 +64,8 @@ inventory:item_calc("hit", inventory_hit)
 Character.__index = Character
 setmetatable(Character, workspaces.Character)
 
-Character.section = almanac.get("database/fe4/char.json")
-Character.helper_portrait = "database/fe4/images"
+Character.section = almanac.get("almanac/database/fe4/char.json")
+Character.helper_portrait = "almanac/database/fe4/images"
 
 Character.helper_job_base = true
 Character.helper_job_reset = false
@@ -560,7 +560,7 @@ end
 Job.__index = Job
 setmetatable(Job, workspaces.Job)
 
-Job.section = almanac.get("database/fe4/job.json")
+Job.section = almanac.get("almanac/database/fe4/job.json")
 
 Job.rank_exp = rank_exp
 
@@ -607,7 +607,7 @@ end
 Item.__index = Item
 setmetatable(Item, workspaces.Item)
 
-Item.section = almanac.get("database/fe4/item.json")
+Item.section = almanac.get("almanac/database/fe4/item.json")
 
 ---------------------------------------------------
 -- Skill --
@@ -615,7 +615,7 @@ Item.section = almanac.get("database/fe4/item.json")
 Skill.__index = Skill
 setmetatable(Skill, workspaces.Skill)
 
-Skill.section = almanac.get("database/fe4/skill.json")
+Skill.section = almanac.get("almanac/database/fe4/skill.json")
 
 function Skill:get_emoji()
     if util.emoji.config.enabled then
@@ -632,7 +632,7 @@ end
 Blood.__index = Blood
 setmetatable(Blood, almanac.Workspace)
 
-Blood.section = almanac.get("database/fe4/blood.json")
+Blood.section = almanac.get("almanac/database/fe4/blood.json")
 
 function Blood:show()
     local infobox = Infobox:new({title = self.data.name})

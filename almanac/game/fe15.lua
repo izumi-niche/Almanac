@@ -58,9 +58,9 @@ local shard_bonus = {
 Character.__index = Character
 setmetatable(Character, workspaces.Character)
 
-Character.section = almanac.get("database/fe15/char.json")
+Character.section = almanac.get("almanac/database/fe15/char.json")
 Character.helper_job_growth = true
-Character.helper_portrait = "database/fe15/images"
+Character.helper_portrait = "almanac/database/fe15/images"
 
 Character.average_rise_stat = true
 
@@ -224,7 +224,7 @@ end
 Job.__index = Job
 setmetatable(Job, workspaces.Job)
 
-Job.section = almanac.get("database/fe15/job.json")
+Job.section = almanac.get("almanac/database/fe15/job.json")
 
 Job.hp_bonus = true
 
@@ -290,7 +290,7 @@ end
 Item.__index = Item
 setmetatable(Item, workspaces.Item)
 
-Item.section = almanac.get("database/fe15/item.json")
+Item.section = almanac.get("almanac/database/fe15/item.json")
 
 function Item:default_options()
     return {forge = false}
@@ -339,7 +339,7 @@ end
 Skill.__index = Skill
 setmetatable(Skill, workspaces.Skill)
 
-Skill.section = almanac.get("database/fe15/skill.json")
+Skill.section = almanac.get("almanac/database/fe15/skill.json")
 
 return {
     Character = Character,

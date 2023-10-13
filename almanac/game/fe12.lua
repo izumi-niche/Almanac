@@ -6,7 +6,7 @@ local Pagebox = almanac.Pagebox
 
 local util = almanac.util
 
-local pack = util.emoji.get("database/fe12/emoji.json")
+local pack = util.emoji.get("almanac/database/fe12/emoji.json")
 
 local kris_history = {
     merchant = {
@@ -163,8 +163,8 @@ inventory:item_calc("crit", inventory_crit)
 Character.__index = Character
 setmetatable(Character, workspaces.Character)
 
-Character.section = almanac.get("database/fe12/char.json")
-Character.helper_portrait = "database/fe12/images"
+Character.section = almanac.get("almanac/database/fe12/char.json")
+Character.helper_portrait = "almanac/database/fe12/images"
 
 Character.helper_job_base = true
 Character.helper_job_growth = true
@@ -450,12 +450,12 @@ end
 Job.__index = Job
 setmetatable(Job, workspaces.Job)
 
-Job.section = almanac.get("database/fe12/job.json")
+Job.section = almanac.get("almanac/database/fe12/job.json")
 
 Job.pack = pack
 Job.rank_exp = rank_exp
 
-Job.icon = "database/fe12/images/icon/%s"
+Job.icon = "almanac/database/fe12/images/icon/%s"
 
 function Job:show()
     local infobox = workspaces.Job.show(self)
@@ -498,7 +498,7 @@ end
 Item.__index = Item
 setmetatable(Item, workspaces.Item)
 
-Item.section = almanac.get("database/fe12/item.json")
+Item.section = almanac.get("almanac/database/fe12/item.json")
 
 local forge_cost = {
     mt = {0.5, 1.5, 3.0, 5.0, 7.5, 10.5, 14.0, 18.0, 22.5, 27.5},

@@ -21,7 +21,7 @@ local rank_exp = {
     ["S+"] = 3600
 }
 
-local pack = util.emoji.get("database/fe16/emoji.json")
+local pack = util.emoji.get("almanac/database/fe16/emoji.json")
 
 local Character = {}
 local Job = {}
@@ -71,11 +71,11 @@ inventory:item_calc("crit", inventory_crit)
 Character.__index = Character
 setmetatable(Character, workspaces.Character)
 
-Character.section = almanac.get("database/fe16/char.json")
+Character.section = almanac.get("almanac/database/fe16/char.json")
 
 Character.helper_job_growth = true
 
-Character.helper_portrait = "database/fe16/images"
+Character.helper_portrait = "almanac/database/fe16/images"
 Character.helper_job_reset = false
 
 Character.average_rise_stat = true
@@ -592,7 +592,7 @@ end
 Job.__index = Job
 setmetatable(Job, workspaces.Job)
 
-Job.section = almanac.get("database/fe16/job.json")
+Job.section = almanac.get("almanac/database/fe16/job.json")
 
 function Job:show()
     local infobox = almanac.Infobox:new({title = self.data.name})
@@ -695,7 +695,7 @@ end
 Item.__index = Item
 setmetatable(Item, workspaces.Item)
 
-Item.section = almanac.get("database/fe16/item.json")
+Item.section = almanac.get("almanac/database/fe16/item.json")
 
 function Item:get_emoji()
     return pack:get("rank_" .. self.data.type, "")
@@ -707,7 +707,7 @@ end
 Skill.__index = Skill
 setmetatable(Skill, workspaces.Skill)
 
-Skill.section = almanac.get("database/fe16/skill.json")
+Skill.section = almanac.get("almanac/database/fe16/skill.json")
 
 function Skill:get_name()
     local name = self.data.name
@@ -723,7 +723,7 @@ function Skill:get_name()
 end
 
 function Skill:get_icon()
-    return string.format("database/fe16/images/skill/fe16_%s.png", self.data.icon)
+    return string.format("almanac/database/fe16/images/skill/fe16_%s.png", self.data.icon)
 end
 
 function Skill:get_emoji()
@@ -742,7 +742,7 @@ end
 Rank.__index = Rank
 setmetatable(Rank, almanac.Workspace)
 
-Rank.section = almanac.get("database/fe16/rank.json")
+Rank.section = almanac.get("almanac/database/fe16/rank.json")
 
 function Rank:show()
     local infobox = Infobox:new({title = self.data.name})
@@ -809,7 +809,7 @@ end
 Bat.__index = Bat
 setmetatable(Bat, almanac.Workspace)
 
-Bat.section = almanac.get("database/fe16/bat.json")
+Bat.section = almanac.get("almanac/database/fe16/bat.json")
 
 local bat_order = {"phys", "mag", "hit", "crit", "avo", "prot", "res", "cha"}
 

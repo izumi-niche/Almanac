@@ -6,7 +6,7 @@ local util = almanac.util
 local Infobox = almanac.Infobox
 local Pagebox = almanac.Pagebox
 
-local pack = util.emoji.get("database/fe10/emoji.json")
+local pack = util.emoji.get("almanac/database/fe10/emoji.json")
 
 local rank_exp = {
     E = 1,
@@ -61,8 +61,8 @@ inventory:item_calc("crit", inventory_crit)
 Character.__index = Character
 setmetatable(Character, workspaces.Character)
 
-Character.section = almanac.get("database/fe10/char.json")
-Character.helper_portrait = "database/fe10/images"
+Character.section = almanac.get("almanac/database/fe10/char.json")
+Character.helper_portrait = "almanac/database/fe10/images"
 
 Character.helper_job_base = true
 
@@ -418,7 +418,7 @@ end
 Job.__index = Job
 setmetatable(Job, workspaces.Job)
 
-Job.section = almanac.get("database/fe10/job.json")
+Job.section = almanac.get("almanac/database/fe10/job.json")
 
 Job.rank_exp = rank_exp
 Job.pack = pack
@@ -441,7 +441,7 @@ end
 Item.__index = Item
 setmetatable(Item, workspaces.Item)
 
-Item.section = almanac.get("database/fe10/item.json")
+Item.section = almanac.get("almanac/database/fe10/item.json")
 
 ---------------------------------------------------
 -- Skill --
@@ -449,7 +449,7 @@ Item.section = almanac.get("database/fe10/item.json")
 Skill.__index = Skill
 setmetatable(Skill, workspaces.Skill)
 
-Skill.section = almanac.get("database/fe10/skill.json")
+Skill.section = almanac.get("almanac/database/fe10/skill.json")
 
 function Skill:get_emoji()
     if util.emoji.config.enabled then
